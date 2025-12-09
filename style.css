@@ -1,0 +1,74 @@
+body {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.quote-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  margin: auto;
+}
+
+.quote-card:hover {
+  transform: translateY(-4px);
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+#quoteDisplay {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #555;
+  padding: 10px;
+  min-height: 80px;
+  transition: opacity 0.5s;
+  border: #14626b dotted 2px;
+  word-wrap: break-word;
+  white-space: normal;
+  width: 100%;
+  display: inline-block;
+}
+
+#quoteDisplay.fade {
+  opacity: 0;
+}
+
+button {
+  background: #4a90e2;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #357abd;
+  transform: scale(1.05);
+}
+
+footer {
+  position: absolute;
+  bottom: 15px;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-size: 0.9rem;
+}

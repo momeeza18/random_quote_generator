@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Quote Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <div class="quote-card">
+        <h1>✨ Motivational Quote Generator ✨</h1>
+        <p id="quoteDisplay">Click the button to get inspired!</p>
+        <button onclick="generateRandomQuote()">Get Quote</button>
+    </div>
+
+    <footer>Made with ❤️ by Momi</footer>
+
+    <script>
+        let quotes = [];
+        fetch('https://dummyjson.com/quotes')
+            .then(res => res.json())
+            .then(data => {
+                quotes = data.quotes.map(q => `"${q.quote}" - ${q.author}`);
+            })
+            .then(console.log);
+
+        function generateRandomQuote() {
+            if (quotes.length === 0) return;
+            const quoteDisplay = document.getElementById("quoteDisplay");
+            quoteDisplay.classList.add("fade");
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                quoteDisplay.innerHTML = quotes[randomIndex];
+                quoteDisplay.classList.remove("fade");
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>
