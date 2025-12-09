@@ -29,10 +29,3 @@ Click the button to generate a random quote.
    - Applies fade animation  
    - Displays it in the UI  
 
-
-## File Structure
-quote-generator/
-│
-├─ index.html       # Main HTML file
-├─ style.css        # CSS styles
-└─ script.js        # JavaScript for fetching quotes
